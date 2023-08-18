@@ -26,18 +26,17 @@ p {
 
 main {
   display: flex;
-  /* flex: 3; */
   flex-wrap: wrap;
   margin-top: 2%;
 }
 
 .card {
   position: relative;
-  flex: 1 0 0;
+  flex: 1 0 300px;
   border-style: solid;
   border-width: 1px;
   padding: 10px;
-  margin: 20px;
+  margin: 20px 20px;
 }
 
 .card header {
@@ -52,4 +51,18 @@ main {
 
 .card p {
   font-size: 10px;
+}
+
+/* Cards are split into two columns at 992px or smaller */
+@media screen and (min-width: 992px) {
+  .card {
+    width: 50%;
+  }
+}
+
+/* Cards are stacked on top of each other at 768px or smaller */
+@media screen and (min-width: 768px) {
+  .card {
+    width: 100%;
+  }
 }

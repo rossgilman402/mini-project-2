@@ -1,68 +1,94 @@
+/* global variables */
+:root {
+  --dark: rgb(41, 41, 41);
+  --light: white;
+  --electric: rgb(195, 0, 255);
+  --electric-gradient: linear-gradient(rgb(125, 32, 125), rgb(187, 26, 187));
+  --electric-companion: rgb(41, 212, 255);
+  --heading-font: sans-serif;
+  --body-font: sans-serif;
+  --code-font: monospace;
+}
+
+/* global styles */
 * {
-  border: solid red 1px;
-  margin: 0px;
-  padding: 0px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: Arial;
-  margin: 0;
-  background-color: #13293d;
+  background-color: var(--dark);
+  color: var(--light);
+  font-family: var(--body-font);
 }
 
-h1 {
-  text-align: center;
-  margin: 25px 0px;
-  font-size: 40px;
-  color: #9198e5;
+/* typography */
+h1,
+h2,
+h3 {
+  color: var(--electric);
+  margin: 2% 0;
 }
 
-p {
-  text-align: center;
-  margin: 25px 25px;
-  font-size: 20px;
-  color: #9198e5;
+::selection {
+  color: var(--dark);
+  background-color: var(--electric-companion);
+}
+
+/* sections styles */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20%;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2%;
+  padding: 1em;
 }
 
-.card {
-  position: relative;
-  flex: 1 0 300px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-  margin: 20px 20px;
+footer {
+  display: flex;
+  justify-content: center;
 }
 
-.card header {
-  position: absolute;
-  height: 20px;
-  width: auto;
-  top: -20px;
-  padding: 20px;
-  background: linear-gradient(#e66465, #9198e5);
-  color: #fff;
+/* card styles */
+.snippet-card {
+  padding: 1em;
+  flex: 1 0 325px;
+  margin: 1.5em;
+  border: dashed 2px var(--light);
+  transition: ease-in-out 0.25s;
 }
 
-.card p {
-  font-size: 10px;
+.snippet-card:hover,
+.snippet-card:hover .snippet-card-header {
+  box-shadow: 0 0 24px var(--electric);
+  transition: ease-in-out 0.25s;
 }
 
-/* Cards are split into two columns at 992px or smaller */
-@media screen and (min-width: 992px) {
-  .card {
-    width: 50%;
-  }
+.snippet-card-header {
+  margin-top: -40px;
+  padding: 8px;
+  border: solid 2px var(--light);
+  background-color: var(--dark);
+  border-radius: 8px;
 }
 
-/* Cards are stacked on top of each other at 768px or smaller */
-@media screen and (min-width: 768px) {
-  .card {
-    width: 100%;
-  }
+.snippet-card-description {
+  margin: 16px 0;
+  color: var(--electric);
+}
+
+.snippet-card-code {
+  background: var(--electric-gradient);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.snippet-card-code pre code {
+  user-select: all;
 }

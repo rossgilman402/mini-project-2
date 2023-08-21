@@ -3,61 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./assets/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
     <title>Mini Project 2: CSS Snipit Cheat Sheet</title>
   </head>
   <body>
-    <!-- create header that shows the introduction -->
     <header>
-      <h1>CSS Snippit Cheatsheet</h1>
+      <h1>CSS Snippet Cheatsheet</h1>
       <p>
         Ever have trouble recalling the exact syntax for you favorite CSS code?
-        Give it a permanent home and add it to this page! Select any snippit
+        Give it a permanent home and add it to this page! Select any snippet
         below and it'll automatically select all of the code for you to copy.
       </p>
     </header>
-    <!-- create a main section that will hold the flex boxes for each instruction -->
-    <main>
-      <section class="card">
-        <header>Flexbox Row</header>
-        <p>Use these three properties to create a Flexbox row layout.</p>
-        <pre>...</pre>
+    <main class="snippit-cards">
+      <section class="snippet-card">
+        <h2 class="snippet-card-header">Flexbox Row</h2>
+        <p class="snippet-card-description">
+          Use these three properties to create a Flexbox row layout.
+        </p>
+        <div class="snippet-card-code">
+          <pre>
+<code>.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+</code>
+</pre>
+        </div>
       </section>
 
-      <section class="card">
-        <header>Flexbox Row</header>
-        <p>Use these three properties to create a Flexbox row layout.</p>
-        <pre>...</pre>
+      <section class="snippet-card">
+        <h2 class="snippet-card-header">Flexbox Column</h2>
+        <p class="snippet-card-description">
+          Use this to create a Flexbox column layout.
+        </p>
+        <div class="snippet-card-code">
+          <pre>
+<code>.column {
+  display: flex;
+  flex-direction: column;
+}
+</code>
+</pre>
+        </div>
       </section>
 
-      <section class="card">
-        <header>Flexbox Row</header>
-        <p>Use these three properties to create a Flexbox row layout.</p>
-        <pre>...</pre>
+      <section class="snippet-card">
+        <h2 class="snippet-card-header">CSS Grid Layout</h2>
+        <p class="snippet-card-description">
+          Build a 12-column layout using CSS Grid
+        </p>
+        <div class="snippet-card-code">
+          <pre>
+<code>.grid {
+  display: grid;
+}
+</code>
+</pre>
+        </div>
       </section>
 
-      <section class="card">
-        <header>Flexbox Row</header>
-        <p>Use these three properties to create a Flexbox row layout.</p>
-        <pre>...</pre>
+      <section class="snippet-card">
+        <h2 class="snippet-card-header">Linear Gradients</h2>
+        <p class="snippet-card-description">
+          This will create a background linear gradient from top to bottom.
+        </p>
+        <div class="snippet-card-code">
+          <pre>
+<code>.linear-gradient-background {
+  background-image: linear-gradient(
+  rgba(232, 102, 236, 0.3) 0%,
+  rgba(232, 102, 236, 0.6) 100%
+  );
+}
+</code>
+</pre>
+        </div>
       </section>
 
-      <section class="card">
-        <header>Flexbox Row</header>
-        <p>Use these three properties to create a Flexbox row layout.</p>
-        <pre>...</pre>
+      <section class="snippet-card">
+        <h2 class="snippet-card-header">Box Transition Glow</h2>
+        <p class="snippet-card-description">
+          Use transition and box shadows to glow on hover.
+        </p>
+
+        <div class="snippet-card-code">
+          <pre>
+<code>.code-card .card-header {
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px
+  rgba(232, 102, 236, 1), 0 0 15px
+  rgba(232, 102, 236, 1);
+}
+</code>
+</pre>
+        </div>
       </section>
 
-      <section class="card">
-        <header>Flexbox Row</header>
-        <p>Use these three properties to create a Flexbox row layout.</p>
-        <pre>...</pre>
+      <section class="snippet-card">
+        <h2 class="snippet-card-header">Overlay Card with Title</h2>
+        <p class="snippet-card-description">
+          Use position properties and negative margins to raise elements higher
+          than their natural starting point.
+        </p>
+        <div class="snippet-card-code">
+          <pre>
+<code>.card-header {
+  position: relative;
+  margin-top: -20px;
+}
+</code>
+</pre>
+        </div>
       </section>
     </main>
-    <!-- create an outline section for all the other sections that will be used for the instructions -->
-    <!-- the section should include: header, code snipit, instructions -->
-    <!-- create a footer -->
-    <footer>Made with love and CSS</footer>
+    <footer>
+      <h3>Made with ❤️ and CSS</h3>
+    </footer>
   </body>
 </html>
